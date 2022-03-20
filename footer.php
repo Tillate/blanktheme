@@ -12,19 +12,13 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blanktheme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'blanktheme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'blanktheme' ), 'blanktheme', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
+			<div class="container-footer">
+					<img src="<?php echo get_template_directory_uri();?>/img/logo.png" class="logo-footer" alt="...">
+					<div class="col">A propos</div>
+					<div class="col">L'Entreprise</div>
+					<div class="col">Contact</div>
+			</div>
+			
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

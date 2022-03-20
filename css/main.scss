@@ -1,9 +1,245 @@
-// Custom.scss
-// Option A: Include all of Bootstrap
+// Custom variables 
 
-// Include any default variable overrides here (though functions won't be available)
+$primary: white;
+$gray: #E6E6E6;
+
+$theme-colors: (
+    "primary": $primary,
+    "gray": $gray,
+);
+
+//Create your own map
+$custom-color: (
+    "icon-background": rgba(255, 102, 41, 0.2)
+);
+
+//Merge map
+$theme-colors: map-merge($theme-colors, $custom-color);
 
 @import "./bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
+body {
+    font-family: Poppins;
+    overflow-x: hidden;
+}
+.post, .page {
+    margin: 0;
+}
+/** ************************ Header ************************/
 
+.announcement-bar {
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--bs-gray);
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: inline-flex;
+        margin: 0 -10px;
+
+        li {
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+
+            a{
+                color: black;
+                text-decoration: none;
+            }
+            a:hover:nth-child(2) {
+                text-decoration: underline;
+            }
+
+            .bi {
+                background-color: var(--bs-icon-background);
+                color: black;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 30px;
+                height: 30px;
+                margin-right: 6px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+
+// CART
+.site-header {
+    a {
+        color: inherit;
+    }
+    .aws-search-field {
+        font-size: 0.9rem;
+        padding-left: 1.4rem;
+        border-radius: 10px!important;
+    }
+}
+
+/**** Main menu *****/
+.main-navigation {
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: white;
+
+    .nav-menu {
+        gap: 2rem;
+        justify-content: space-between;
+    }
+    .menu-item a {
+        font-size: 1.2rem;
+
+    }
+
+    .current-menu-item {
+        box-shadow: inset 0 -9px 0 0 rgb(255, 101, 41);
+    }
+
+    a {
+        box-shadow: inset 0 0 0 0 rgb(255, 101, 41);
+        transition: 0.3s ease-out;
+    }
+    a:hover {
+        box-shadow: inset 0 -9px 0 0 rgb(255, 101, 41);
+    }
+
+    .menu-toggle {
+        background-color: $primary;
+        border: none;
+
+        i {
+            font-size: 2.5rem;
+        }
+    }
+    
+}
+
+.sliders {
+    margin-top: 50px;
+}
+.carousel-inner {
+    border-radius: 10px;
+}
+.section-news {
+    height: 100%;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    button {
+        font-family: Poppins;
+        font-weight: 600;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        width: 45%;
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        margin-top: 15px;
+        box-shadow: inset 0 0 0 0 rgb(255, 101, 41);
+
+        &:hover {
+            box-shadow: inset -50px 0 0 0 rgb(255, 101, 41);
+            transition: 0.3s ease;
+        }
+    }
+}
+@media screen and (max-width: 1024px) {
+    .sliders {
+        .row {
+            flex-direction: column-reverse;
+        }
+    }
+    .section-news {
+        padding-top: 10px;
+        button {
+            align-self: center;
+        }
+    }
+    
+  }
+/****************Woocommerce ******************/
+  .woocommerce span.onsale {
+      background-color: #ff6529 ;
+  }
+  .woocommerce h2 {
+      display: inline-block;
+      color: black;
+      box-shadow: inset  0 -2px 0 0 rgb(255, 101, 41);
+  }
+  .woocommerce-Price-amount {
+      color: #ff6529;
+  }
+  .price {
+      margin-top: 10px;
+  }
+  .woocommerce a.button {
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    font-family: poppins;
+    &:hover {
+        background-color: white;
+        color: #ff6529;
+        border: 1px solid #ff6529;
+        transition: 0.3s ease;
+    }
+}
+//  Categories
+
+.categories {
+    background-color: #f9f9f9;
+
+    .card-categories {
+        img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        h2 {
+            text-decoration: none;
+            color: black;
+            position: absolute;
+            bottom: 0;
+            width: 90%;
+            text-align: end;
+
+            &:hover {
+                box-shadow: inset  0 -5px 0 0 rgb(255, 101, 41);
+                transition: 0.3s ease-out;
+            }
+        }
+        
+    }
+    @media screen and (max-width: 1024px) {
+        .cart-gap {
+            gap: 15px;
+        }
+    }
+}
+.bg-grey {
+    background-color: #f9f9f9;
+}
+
+// ***************** FOOTER ************//
+.logo-footer {
+    width: 150px;
+}
+
+.site-footer {
+    .container-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        padding: 25px 50px;
+    }
+}
