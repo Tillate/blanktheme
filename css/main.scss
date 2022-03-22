@@ -26,6 +26,13 @@ body {
 .post, .page {
     margin: 0;
 }
+a {
+    color: black;
+    &:hover {
+        color: black;
+    }
+}
+
 /** ************************ Header ************************/
 
 .announcement-bar {
@@ -184,6 +191,7 @@ body {
     background-color: black;
     color: white;
     font-weight: 600;
+    border: 1px solid black;
     border-radius: 5px;
     font-family: poppins;
     &:hover {
@@ -193,6 +201,11 @@ body {
         transition: 0.3s ease;
     }
 }
+
+.attachment-woocommerce_thumbnail {
+    border-radius: 10px;
+}
+
 //  Categories
 
 .categories {
@@ -217,7 +230,6 @@ body {
                 transition: 0.3s ease-out;
             }
         }
-        
     }
     @media screen and (max-width: 1024px) {
         .cart-gap {
@@ -241,5 +253,99 @@ body {
         justify-content: space-between;
         text-align: center;
         padding: 25px 50px;
+    }
+}
+
+li {
+    list-style: none;
+}
+.comment-container {
+    max-width: 50%;
+    padding: 1em 2em;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    
+    p{
+        font-size: 14px;
+    }
+}
+
+.comment-respond {
+    margin-top: 50px;
+
+    .comment-form-comment {
+        max-width: 50%;
+        
+        textarea {
+            font-size: 14px;
+            max-height: 150px;
+            resize: none;
+            padding: 5px 10px;
+        }
+
+        label {
+            display: block;
+        }
+    }
+}
+
+.container-blog {
+    padding-top: 50px;
+
+    .entry-content {
+        background-color: rgba(255, 102, 41, 0.1);
+        border-radius: 10px;
+    }
+}
+
+
+/*********BLOG ******/ 
+.main-article {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+    gap: 80px;
+    
+}
+.article-category {
+    width: 320px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 20px;
+
+    
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .article-author {
+        font-size: 12px;
+    }
+    .article-title {
+        font-size: 22px;
+        box-shadow: inset  0 -2px 0 0 rgb(255, 101, 41);
+        transition: 0.3s ease-out;
+        &:hover {
+            box-shadow: inset  0 -5px 0 0 rgb(255, 101, 41);
+        }
+    }
+
+    .article-content {
+        max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        img {
+            height: 190px;
+            border-radius: 5px;
+        }
+        h3 {
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        p {
+            font-size: 12px;
+            max-height: 90px;
+            overflow-y: hidden;
+        }
     }
 }

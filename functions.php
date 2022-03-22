@@ -148,8 +148,6 @@ function blanktheme_scripts() {
 	wp_enqueue_script( 'bootstrap-script', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js', array('jquery'));
 	wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/js/script.js', array('jquery'));
 
-	
-
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
